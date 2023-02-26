@@ -40,7 +40,7 @@
         "symfony/serializer": "^4.4 || ^5.0",
         "symfony/property-access": "^4.4 || ^5.0",
         "proklung/base-exception": "^1.0",
-        "spiral/attributes": "^2.8"
+        "spiral/attributes": "^3.0"
     },
     "require-dev": {
         "proklung/phpunit-testing-tools": "^1.0",
