@@ -56,8 +56,8 @@ class RequestParamArgumentResolverTest extends ContainerAwareBaseTestCase
         $request = $this->createRequestPost(
             $this->controllerClass,
             [
-                'email' => $this->faker->email,
-                'numeric' => $this->faker->numberBetween(1, 100),
+                'email' => 'test@email.ru',
+                'numeric' => rand(1, 100),
             ],
         );
 
@@ -82,8 +82,8 @@ class RequestParamArgumentResolverTest extends ContainerAwareBaseTestCase
             $this->createRequestPost(
                 $this->controllerClass,
                 [
-                    'email' => $this->faker->email,
-                    'numeric' => $this->faker->numberBetween(1, 100),
+                    'email' => 'test@email.ru',
+                    'numeric' => rand(1, 100),
                 ],
                 'actionShort'
             ),
@@ -104,8 +104,8 @@ class RequestParamArgumentResolverTest extends ContainerAwareBaseTestCase
         $request = $this->createRequestPost(
             SampleControllerMismatched::class,
             [
-                'email' => $this->faker->email,
-                'numeric' => $this->faker->numberBetween(1, 100),
+                'email' => 'test@email.ru',
+                'numeric' => rand(1, 100),
             ],
         );
 
@@ -128,8 +128,8 @@ class RequestParamArgumentResolverTest extends ContainerAwareBaseTestCase
             $this->createRequestPost(
                 $this->controllerClass,
                 [
-                    'email' => $this->faker->email,
-                    'numeric' => $this->faker->numberBetween(1, 100),
+                    'email' => 'test@email.ru',
+                    'numeric' => rand(1, 100),
                 ],
             ),
             $this->getMetaArgument('unknown')
@@ -152,8 +152,8 @@ class RequestParamArgumentResolverTest extends ContainerAwareBaseTestCase
     {
         $result = $this->obTestObject->supports(
             $this->createRequest($this->controllerClass, [
-                'email' => $this->faker->email,
-                'numeric' => $this->faker->numberBetween(1, 100),
+                'email' => 'test@email.ru',
+                'numeric' => rand(1, 100),
             ],
                 'GET'
             ),
@@ -178,8 +178,8 @@ class RequestParamArgumentResolverTest extends ContainerAwareBaseTestCase
             $this->createRequestPost(
                 SampleControllerArguments::class,
                 [
-                    'email' => $this->faker->email,
-                    'numeric' => $this->faker->numberBetween(1, 100),
+                    'email' => 'test@email.ru',
+                    'numeric' => rand(1, 100),
                 ],
             ),
             $this->getMetaArgument('unserialized')
@@ -210,8 +210,8 @@ class RequestParamArgumentResolverTest extends ContainerAwareBaseTestCase
         $request = $this->createRequestPost(
             $this->controllerClass,
             [
-                'email' => $this->faker->email,
-                'numeric' => $this->faker->numberBetween(1, 100),
+                'email' => 'test@email.ru',
+                'numeric' => rand(1, 100),
             ]
         );
 
@@ -243,8 +243,8 @@ class RequestParamArgumentResolverTest extends ContainerAwareBaseTestCase
         $request = $this->createRequestPost(
             $this->controllerClass,
             [
-                'email' => $this->faker->email,
-                'numeric' => $this->faker->numberBetween(1, 100),
+                'email' => 'test@email.ru',
+                'numeric' => rand(1, 100),
             ],
             'actionNoValidate'
         );

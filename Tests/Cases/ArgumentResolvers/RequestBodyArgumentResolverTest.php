@@ -14,6 +14,7 @@ use Prokl\AnnotatedParamResolverBundle\Tests\Cases\ArgumentResolvers\Tools\Sampl
 use Prokl\AnnotatedParamResolverBundle\Tests\Cases\ArgumentResolvers\Traits\ArgumentResolverTrait;
 use Prokl\AnnotatedParamResolverBundle\Tests\Cases\ArgumentResolvers\Tools\SampleControllerArguments;
 use ReflectionException;
+use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 
 /**
  * Class RequestBodyArgumentResolverTest
@@ -56,8 +57,8 @@ class RequestBodyArgumentResolverTest extends ContainerAwareBaseTestCase
         $request = $this->createRequestJson(
             $this->controllerClass,
             [
-                'email' => $this->faker->email,
-                'numeric' => $this->faker->numberBetween(1, 100),
+                'email' => 'test@email.ru',
+                'numeric' => rand(1, 100),
             ],
         );
 
@@ -80,8 +81,8 @@ class RequestBodyArgumentResolverTest extends ContainerAwareBaseTestCase
         $request = $this->createRequestJson(
             SampleControllerBodyAnno::class,
             [
-                'email' => $this->faker->email,
-                'numeric' => $this->faker->numberBetween(1, 100),
+                'email' => 'test@email.ru',
+                'numeric' => rand(1, 100),
             ],
         );
 
@@ -105,8 +106,8 @@ class RequestBodyArgumentResolverTest extends ContainerAwareBaseTestCase
             $this->createRequestJson(
                 $this->controllerClass,
                 [
-                    'email' => $this->faker->email,
-                    'numeric' => $this->faker->numberBetween(1, 100),
+                    'email' => 'test@email.ru',
+                    'numeric' => rand(1, 100),
                 ],
                 'actionShort'
             ),
@@ -127,8 +128,8 @@ class RequestBodyArgumentResolverTest extends ContainerAwareBaseTestCase
         $request = $this->createRequestJson(
             SampleControllerMismatched::class,
             [
-                'email' => $this->faker->email,
-                'numeric' => $this->faker->numberBetween(1, 100),
+                'email' => 'test@email.ru',
+                'numeric' => rand(1, 100),
             ],
             'action3'
         );
@@ -152,8 +153,8 @@ class RequestBodyArgumentResolverTest extends ContainerAwareBaseTestCase
             $this->createRequestJson(
                 $this->controllerClass,
                 [
-                    'email' => $this->faker->email,
-                    'numeric' => $this->faker->numberBetween(1, 100),
+                    'email' => 'test@email.ru',
+                    'numeric' => rand(1, 100),
                 ],
             ),
             $this->getMetaArgument('unknown')
@@ -175,8 +176,8 @@ class RequestBodyArgumentResolverTest extends ContainerAwareBaseTestCase
     public function testSupportsNoGetQuery(): void
     {
         $request =  $this->createRequestJson($this->controllerClass, [
-            'email' => $this->faker->email,
-            'numeric' => $this->faker->numberBetween(1, 100),
+            'email' => 'test@email.ru',
+            'numeric' => rand(1, 100),
         ]);
         $request->setMethod('GET');
 
@@ -203,8 +204,8 @@ class RequestBodyArgumentResolverTest extends ContainerAwareBaseTestCase
             $this->createRequestJson(
                 SampleControllerArguments::class,
                 [
-                    'email' => $this->faker->email,
-                    'numeric' => $this->faker->numberBetween(1, 100),
+                    'email' => 'test@email.ru',
+                    'numeric' => rand(1, 100),
                 ],
             ),
             $this->getMetaArgument('unserialized')
@@ -234,8 +235,8 @@ class RequestBodyArgumentResolverTest extends ContainerAwareBaseTestCase
         $request = $this->createRequestJson(
             $this->controllerClass,
             [
-                'email' => $this->faker->email,
-                'numeric' => $this->faker->numberBetween(1, 100),
+                'email' => 'test@email.ru',
+                'numeric' => rand(1, 100),
             ]
         );
 
@@ -266,8 +267,8 @@ class RequestBodyArgumentResolverTest extends ContainerAwareBaseTestCase
         $request = $this->createRequestJson(
             $this->controllerClass,
             [
-                'email' => $this->faker->email,
-                'numeric' => $this->faker->numberBetween(1, 100),
+                'email' => 'test@email.ru',
+                'numeric' => rand(1, 100),
             ],
             'actionNoValidate'
         );

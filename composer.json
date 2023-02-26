@@ -10,6 +10,12 @@
             "homepage": "https://github.com/ProklUng"
         }
     ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/positron48/phpunit.testing.tools"
+        }
+    ],
     "support": {
         "issues": "https://github.com/ProklUng/AnnotatedParamResolverBundle/issues",
         "source": "https://github.com/ProklUng/AnnotatedParamResolverBundle"
@@ -41,5 +47,11 @@
         "symfony/yaml": "^4.4 || ^5.0",
         "symfony/property-info": "^4.4 || ^5.0",
         "icanhazstring/composer-unused": "^0.7.5"
+    },
+    "config": {
+        "allow-plugins": {
+            "icanhazstring/composer-unused": false,
+            "phpstan/extension-installer": false
+        }
     }
 }

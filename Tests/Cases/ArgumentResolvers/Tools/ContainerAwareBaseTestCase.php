@@ -27,7 +27,7 @@ class ContainerAwareBaseTestCase extends BaseTestCase
                 'resolvers.yaml',
                 'dev/local.yaml'
             ],
-            '/Resources/config'
+            'Resources/config'
         );
 
         parent::setUp();
